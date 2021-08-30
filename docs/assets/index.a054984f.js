@@ -59,6 +59,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       outline: none;
       font-size: 1em;
       font-family: unset;
+      cursor: pointer;
     }
   `];const c=t(l);function u(){return n((()=>a`<button slot="button">
       <svg width="12" height="12" viewBox="0 0 12 12">
@@ -81,8 +82,9 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       background: var(--token--secondary-light-1);
       border: none;
       border-radius: var(--radius);
+      cursor: pointer;
     }
-  `];const h=t(u);function p(o){const[,t]=e("checked");return n((()=>a`<input
+  `];const p=t(u);function h(o){const[,t]=e("checked");return n((()=>a`<input
         slot="input"
         type="checkbox"
         onchange=${o=>{t(o.target.checked)}}
@@ -99,7 +101,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
         </svg>
       </slot>
     </div>
-  </host>`}p.props={checked:{type:Boolean,reflect:!0}},p.styles=[i,o`
+  </host>`}h.props={checked:{type:Boolean,reflect:!0}},h.styles=[i,o`
     :host {
       position: relative;
       display: inline-flex;
@@ -129,7 +131,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     :host([checked]) .icon {
       opacity: 1;
     }
-  `];const m=t(p);function b(){return a`<host shadowDom>
+  `];const m=t(h);function b(){return a`<host shadowDom>
     <button>
       <slot></slot>
     </button>
@@ -141,6 +143,8 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       font-family: unset;
       height: calc(var(--token--box-min-height) * 0.75);
       position: relative;
+      padding: 0px 0.5rem;
+      cursor: pointer;
     }
 
     button:before {
@@ -158,17 +162,17 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     :host([selected]) button:before {
       background: var(--token--primary);
     }
-  `];const k=t(b);let v=Date.now();function g(){const o=s("NewTask",{bubbles:!0,composed:!0});return a`<host shadowDom>
+  `];const g=t(b);let k=Date.now();function v(){const o=s("NewTask",{bubbles:!0,composed:!0});return a`<host shadowDom>
     <form
       class="header"
-      onsubmit=${t=>{t.preventDefault();const{target:e}=t,{input:{value:r}}=e;r.trim()&&(v++,o({id:v,value:r,checked:!1}),e.reset())}}
+      onsubmit=${t=>{t.preventDefault();const{target:e}=t,{input:{value:r}}=e;r.trim()&&(k++,o({id:k,value:r,checked:!1}),e.reset())}}
     >
       <todo-input placeholder="Todo" required name="input"></todo-input>
       <todo-button
         style=${{"--radius":"0 var(--token--box-radius) 0 var(--token--box-radius)"}}
       ></todo-button>
     </form>
-  </host>`}g.styles=[i,o`
+  </host>`}v.styles=[i,o`
     .header {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -176,7 +180,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       padding-left: var(--token--box-gap);
       align-items: flex-end;
     }
-  `];const f=t(g);function y({checked:o}){return a`<host shadowDom>
+  `];const f=t(v);function y({checked:o}){return a`<host shadowDom>
     <label>
       <todo-checkbox checked="${o}" />
       <span>
@@ -214,7 +218,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
       width: 100%;
     }
-  `];const $=t(w);function D(){const[o,t]=e("task"),[r,n]=e("view");return n("all"),a`<host shadowDom>
+  `];const $=t(w);function D(){const[o,t]=e("task"),[r,n]=e("view");return a`<host shadowDom>
     <todo-header
       onNewTask=${o=>{t((t=>[...t,o.detail]))}}
     ></todo-header>
@@ -229,14 +233,17 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       </div>
     </div>
     <todo-footer class="footer">
-      <todo-tab selected=${"all"==r} onclick=${()=>n("all")}>
+      <todo-tab selected=${"all"===r} onclick=${()=>n("all")}>
         All
       </todo-tab>
-      <todo-tab selected=${"active"==r} onclick=${()=>n("active")}>
+      <todo-tab
+        selected=${"active"===r}
+        onclick=${()=>n("active")}
+      >
         Active
       </todo-tab>
       <todo-tab
-        selected=${"complete"==r}
+        selected=${"complete"===r}
         onclick=${()=>n("complete")}
       >
         Complete
@@ -259,4 +266,4 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     .footer {
       margin: auto 0px 0px;
     }
-  `];const E=t(D);customElements.define("todo-input",c),customElements.define("todo-button",h),customElements.define("todo-checkbox",m),customElements.define("todo-tab",k),customElements.define("todo-header",f),customElements.define("todo-task",x),customElements.define("todo-footer",$),customElements.define("todo-app",E);
+  `];const E=t(D);customElements.define("todo-input",c),customElements.define("todo-button",p),customElements.define("todo-checkbox",m),customElements.define("todo-tab",g),customElements.define("todo-header",f),customElements.define("todo-task",x),customElements.define("todo-footer",$),customElements.define("todo-app",E);
