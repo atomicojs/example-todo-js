@@ -39,6 +39,7 @@ button.styles = [
       background: var(--token--secondary-light-1);
       border: none;
       border-radius: var(--radius);
+      cursor: pointer;
     }
   `,
 ];

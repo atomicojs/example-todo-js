@@ -92,6 +92,7 @@ input.styles = [
       outline: none;
       font-size: 1em;
       font-family: unset;
+      cursor: pointer;
     }
   `,
 ];

@@ -11,8 +11,6 @@ function todo() {
    */
   const [view, setView] = useProp("view");
 
-  setView("all");
-
   return html`<host shadowDom>
     <todo-header
       onNewTask=${
@@ -59,14 +57,17 @@ function todo() {
       </div>
     </div>
     <todo-footer class="footer">
-      <todo-tab selected=${view == "all"} onclick=${() => setView("all")}>
+      <todo-tab selected=${view === "all"} onclick=${() => setView("all")}>
         All
       </todo-tab>
-      <todo-tab selected=${view == "active"} onclick=${() => setView("active")}>
+      <todo-tab
+        selected=${view === "active"}
+        onclick=${() => setView("active")}
+      >
         Active
       </todo-tab>
       <todo-tab
-        selected=${view == "complete"}
+        selected=${view === "complete"}
         onclick=${() => setView("complete")}
       >
         Complete

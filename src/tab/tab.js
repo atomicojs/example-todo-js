@@ -26,6 +26,8 @@ tab.styles = [
       font-family: unset;
       height: calc(var(--token--box-min-height) * 0.75);
       position: relative;
+      padding: 0px 0.5rem;
+      cursor: pointer;
     }
 
     button:before {
