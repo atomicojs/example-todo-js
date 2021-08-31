@@ -2,6 +2,11 @@ import { c, html, css, useProp } from "atomico";
 import tokens from "../tokens";
 
 /**
+ * This component has a special behavior, since
+ * use an input inside the shadowDOM, I have created this situation
+ * so that you know how to emit events automatically
+ * through the props
+ *
  * @param {import("atomico").Props<typeof todoTask.props>} props
  */
 function todoTask({ checked }) {
