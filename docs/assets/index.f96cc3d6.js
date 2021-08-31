@@ -1,4 +1,4 @@
-import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.js";!function(){const o=document.createElement("link").relList;if(!(o&&o.supports&&o.supports("modulepreload"))){for(const o of document.querySelectorAll('link[rel="modulepreload"]'))t(o);new MutationObserver((o=>{for(const e of o)if("childList"===e.type)for(const o of e.addedNodes)"LINK"===o.tagName&&"modulepreload"===o.rel&&t(o)})).observe(document,{childList:!0,subtree:!0})}function t(o){if(o.ep)return;o.ep=!0;const t=function(o){const t={};return o.integrity&&(t.integrity=o.integrity),o.referrerpolicy&&(t.referrerPolicy=o.referrerpolicy),"use-credentials"===o.crossorigin?t.credentials="include":"anonymous"===o.crossorigin?t.credentials="omit":t.credentials="same-origin",t}(o);fetch(o.href,t)}}();var i=o`
+import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.js";!function(){const t=document.createElement("link").relList;if(!(t&&t.supports&&t.supports("modulepreload"))){for(const t of document.querySelectorAll('link[rel="modulepreload"]'))e(t);new MutationObserver((t=>{for(const o of t)if("childList"===o.type)for(const t of o.addedNodes)"LINK"===t.tagName&&"modulepreload"===t.rel&&e(t)})).observe(document,{childList:!0,subtree:!0})}function e(t){if(t.ep)return;t.ep=!0;const e=function(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),"use-credentials"===t.crossorigin?e.credentials="include":"anonymous"===t.crossorigin?e.credentials="omit":e.credentials="same-origin",e}(t);fetch(t.href,e)}}();var i=t`
   :host {
     --token--primary: var(--todo--primary, #ffee00);
     --token--secondary: var(--todo--secondary, black);
@@ -15,30 +15,30 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     --token--box-min-height: var(--todo--box-min-height, 3rem);
     --token--box-gap: var(--todo--box-gap, 3rem);
   }
-`;const d=({color:o,width:t})=>a`<svg height="2" width="${t}">
+`;const d=({color:t,width:e})=>a`<svg height="2" width="${e}">
   <line
     x1="0"
     y1="50%"
     x2="100%"
     y2="50%"
-    stroke="${o}"
+    stroke="${t}"
     stroke-linecap="round"
     stroke-width="2"
     stroke-dasharray="0.1 5"
   />
-</svg>`;function l({value:o="",...t}){const[,s]=e("value");return r("reset",(()=>s(""))),n((()=>a`<input
-        ...${t}
+</svg>`;function c({value:t="",...e}){const[,s]=o("value");return r("reset",(()=>s(""))),n((()=>a`<input
+        ...${e}
         slot="input"
         type="text"
-        value=${o}
-        oninput=${o=>s(o.target.value)}
+        value=${t}
+        oninput=${t=>s(t.target.value)}
       />`)),a`<host shadowDom>
     <div class="box">
       <slot name="input"></slot>
       ${d({color:"var(--token--secondary-light-2)",width:"100%"})}
-      ${d({color:"var(--token--primary)",width:1+.7*o.replace(/s+/g,"").length+"em"})}
+      ${d({color:"var(--token--primary)",width:1+.7*t.replace(/s+/g,"").length+"em"})}
     </div>
-  </host>`}l.props={value:String,name:String,required:Boolean,placeholder:String},l.styles=[i,o`
+  </host>`}c.props={value:String,name:String,required:Boolean,placeholder:String},c.styles=[i,t`
     .box {
       position: relative;
     }
@@ -61,7 +61,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       font-family: unset;
       cursor: pointer;
     }
-  `];const c=t(l);function u(){return n((()=>a`<button slot="button">
+  `];const l=e(c);function u(){return n((()=>a`<button slot="button">
       <svg width="12" height="12" viewBox="0 0 12 12">
         <path
           id="icon-plus"
@@ -71,7 +71,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       </svg>
     </button>`)),a`<host shadowDom>
     <slot name="button"></slot>
-  </host>`}u.styles=[i,o`
+  </host>`}u.styles=[i,t`
     :host {
       --radius: var(--token--box-radius);
     }
@@ -84,11 +84,11 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       border-radius: var(--radius);
       cursor: pointer;
     }
-  `];const p=t(u);function h(o){const[,t]=e("checked");return n((()=>a`<input
+  `];const h=e(u);function p(t){const[,e]=o("checked");return n((()=>a`<input
         slot="input"
         type="checkbox"
-        onchange=${o=>{t(o.target.checked)}}
-        ...${o}
+        onchange=${t=>{e(t.target.checked)}}
+        ...${t}
       />`)),a`<host shadowDom>
     <slot name="input"></slot>
     <div class="icon">
@@ -101,7 +101,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
         </svg>
       </slot>
     </div>
-  </host>`}h.props={checked:{type:Boolean,reflect:!0}},h.styles=[i,o`
+  </host>`}p.props={checked:{type:Boolean,reflect:!0}},p.styles=[i,t`
     :host {
       position: relative;
       display: inline-flex;
@@ -131,11 +131,11 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     :host([checked]) .icon {
       opacity: 1;
     }
-  `];const m=t(h);function b(){return a`<host shadowDom>
+  `];const m=e(p);function b(){return a`<host shadowDom>
     <button>
       <slot></slot>
     </button>
-  </host>`}b.props={selected:{type:Boolean,reflect:!0}},b.styles=[i,o`
+  </host>`}b.props={selected:{type:Boolean,reflect:!0}},b.styles=[i,t`
     button {
       border: none;
       background: none;
@@ -162,17 +162,17 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     :host([selected]) button:before {
       background: var(--token--primary);
     }
-  `];const g=t(b);let k=Date.now();function v(){const o=s("NewTask",{bubbles:!0,composed:!0});return a`<host shadowDom>
+  `];const k=e(b);let g=Date.now();function v(){const t=s("NewTask",{bubbles:!0,composed:!0});return a`<host shadowDom>
     <form
       class="header"
-      onsubmit=${t=>{t.preventDefault();const{target:e}=t,{input:{value:r}}=e;r.trim()&&(k++,o({id:k,value:r,checked:!1}),e.reset())}}
+      onsubmit=${e=>{e.preventDefault();const{target:o}=e,{input:{value:r}}=o;r.trim()&&(g++,t({id:g,value:r,checked:!1}),o.reset())}}
     >
       <todo-input placeholder="Todo" required name="input"></todo-input>
       <todo-button
         style=${{"--radius":"0 var(--token--box-radius) 0 var(--token--box-radius)"}}
       ></todo-button>
     </form>
-  </host>`}v.styles=[i,o`
+  </host>`}v.styles=[i,t`
     .header {
       display: grid;
       grid-template-columns: 1fr auto;
@@ -180,14 +180,22 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       padding-left: var(--token--box-gap);
       align-items: flex-end;
     }
-  `];const f=t(v);function y({checked:o}){return a`<host shadowDom>
+  `];const f=e(v);function y({checked:t}){const[,e]=o("checked");return a`<host shadowDom>
     <label>
-      <todo-checkbox checked="${o}" />
+      <!--
+      In this case we must reflect the checked state 
+      to the component that nests it, in order to 
+      synchronize the state of both the parent and the child
+      -->
+      <todo-checkbox
+        checked="${t}"
+        onchange=${t=>e(t.target.checked)}
+      />
       <span>
         <slot></slot>
       </span>
     </label>
-  </host>`}y.props={checked:{type:Boolean,reflect:!0}},y.styles=[i,o`
+  </host>`}y.props={checked:{type:Boolean,reflect:!0}},y.styles=[i,t`
     label {
       display: grid;
       padding: 0.25rem 0.5rem;
@@ -201,9 +209,9 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       background-color: var(--token--secondary-light-1);
       border-radius: calc(var(--token--box-radius) * 0.33);
     }
-  `];const x=t(y);function w(){return a`<host shadowDom>
+  `];const x=e(y);function w(){return a`<host shadowDom>
     <slot></slot>
-  </host>`}w.styles=[i,o`
+  </host>`}w.styles=[i,t`
     :host {
       display: flex;
       padding: 0 var(--token--box-gap);
@@ -218,17 +226,19 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
       width: 100%;
     }
-  `];const $=t(w);function D(){const[o,t]=e("task"),[r,n]=e("view");return a`<host shadowDom>
+  `];const $=e(w);function D(){const[t,e]=o("task"),[r,n]=o("view");return a`<host shadowDom>
     <todo-header
-      onNewTask=${o=>{t((t=>[...t,o.detail]))}}
+      onNewTask=${t=>{e((e=>[...e,t.detail]))}}
     ></todo-header>
     <div class="tasks">
       <div class="list">
-        ${o.filter((o=>"complete"==r?o.checked:"active"!=r||!o.checked)).map((({value:o,checked:e,id:r})=>a`<todo-task
-              checked=${e}
-              onchange=${o=>{const{target:e}=o;t((o=>o.map((o=>r===o.id?{...o,checked:e.checked}:o))))}}
+        ${t.filter((t=>"complete"==r?t.checked:"active"!=r||!t.checked)).map((({value:t,checked:o,id:r})=>a`<todo-task
+              key=${r}
+              data-key=${r}
+              checked=${o}
+              onchange=${t=>{const{target:o}=t;e((t=>t.map((t=>r===t.id?{...t,checked:o.checked}:t))))}}
             >
-              ${o}
+              ${t}
             </todo-task>`))}
       </div>
     </div>
@@ -249,7 +259,7 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
         Complete
       </todo-tab>
     </todo-footer>
-  </host>`}D.props={view:{type:String,value:"all"},task:{type:Array,value:()=>[]}},D.styles=[i,o`
+  </host>`}D.props={view:{type:String,value:"all"},task:{type:Array,value:()=>[]}},D.styles=[i,t`
     :host {
       display: flex;
       flex-flow: column nowrap;
@@ -266,4 +276,4 @@ import{c as o,a as t,u as e,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     .footer {
       margin: auto 0px 0px;
     }
-  `];const E=t(D);customElements.define("todo-input",c),customElements.define("todo-button",p),customElements.define("todo-checkbox",m),customElements.define("todo-tab",g),customElements.define("todo-header",f),customElements.define("todo-task",x),customElements.define("todo-footer",$),customElements.define("todo-app",E);
+  `];const E=e(D);customElements.define("todo-input",l),customElements.define("todo-button",h),customElements.define("todo-checkbox",m),customElements.define("todo-tab",k),customElements.define("todo-header",f),customElements.define("todo-task",x),customElements.define("todo-footer",$),customElements.define("todo-app",E);
