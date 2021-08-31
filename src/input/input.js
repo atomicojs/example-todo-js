@@ -53,9 +53,9 @@ function input({ value = "", ...props }) {
   return html`<host shadowDom>
     <div class="box">
       <slot name="input"></slot>
-      ${svg({ color: "var(--token--secondary-light-2)", width: "100%" })}
+      ${svg({ color: "var(--secondary-light-2)", width: "100%" })}
       ${svg({
-        color: "var(--token--primary)",
+        color: "var(--primary)",
         width: 1 + value.replace(/s+/g, "").length * 0.7 + "em",
       })}
     </div>

@@ -15,7 +15,7 @@ function button() {
         <path
           id="icon-plus"
           d="M5,11V7H1A1,1,0,0,1,1,5H5V1A1,1,0,0,1,7,1V5h4a1,1,0,0,1,0,2H7v4a1,1,0,0,1-2,0Z"
-          fill="var(--token--primary)"
+          fill="var(--primary)"
         />
       </svg>
     </button>`
@@ -30,13 +30,13 @@ button.styles = [
   tokens,
   css`
     :host {
-      --radius: var(--token--box-radius);
+      --radius: var(--box-radius);
     }
     ::slotted(button) {
-      --size: var(--token--box-min-height);
+      --size: var(--box-min-height);
       width: var(--size);
       height: var(--size);
-      background: var(--token--secondary-light-1);
+      background: var(--secondary-light-1);
       border: none;
       border-radius: var(--radius);
       cursor: pointer;

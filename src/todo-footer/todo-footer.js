@@ -12,16 +12,16 @@ todoFooter.styles = [
   css`
     :host {
       display: flex;
-      padding: 0 var(--token--box-gap);
+      padding: 0 var(--box-gap);
     }
 
     slot {
       display: flex;
       justify-content: space-around;
       align-items: flex-end;
-      background: var(--token--secondary-light-1);
+      background: var(--secondary-light-1);
 
-      border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
+      border-radius: var(--box-radius) var(--box-radius) 0 0;
       width: 100%;
     }
   `,

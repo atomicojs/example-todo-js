@@ -1,21 +1,62 @@
-import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.js";!function(){const t=document.createElement("link").relList;if(!(t&&t.supports&&t.supports("modulepreload"))){for(const t of document.querySelectorAll('link[rel="modulepreload"]'))e(t);new MutationObserver((t=>{for(const o of t)if("childList"===o.type)for(const t of o.addedNodes)"LINK"===t.tagName&&"modulepreload"===t.rel&&e(t)})).observe(document,{childList:!0,subtree:!0})}function e(t){if(t.ep)return;t.ep=!0;const e=function(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),"use-credentials"===t.crossorigin?e.credentials="include":"anonymous"===t.crossorigin?e.credentials="omit":e.credentials="same-origin",e}(t);fetch(t.href,e)}}();var i=t`
+import {
+  c as t,
+  a as e,
+  u as o,
+  b as r,
+  d as n,
+  h as s,
+  e as a,
+} from "./vendor.6860be20.js";
+!(function () {
+  const t = document.createElement("link").relList;
+  if (!(t && t.supports && t.supports("modulepreload"))) {
+    for (const t of document.querySelectorAll('link[rel="modulepreload"]'))
+      e(t);
+    new MutationObserver((t) => {
+      for (const o of t)
+        if ("childList" === o.type)
+          for (const t of o.addedNodes)
+            "LINK" === t.tagName && "modulepreload" === t.rel && e(t);
+    }).observe(document, { childList: !0, subtree: !0 });
+  }
+  function e(t) {
+    if (t.ep) return;
+    t.ep = !0;
+    const e = (function (t) {
+      const e = {};
+      return (
+        t.integrity && (e.integrity = t.integrity),
+        t.referrerpolicy && (e.referrerPolicy = t.referrerpolicy),
+        "use-credentials" === t.crossorigin
+          ? (e.credentials = "include")
+          : "anonymous" === t.crossorigin
+          ? (e.credentials = "omit")
+          : (e.credentials = "same-origin"),
+        e
+      );
+    })(t);
+    fetch(t.href, e);
+  }
+})();
+var i = t`
   :host {
-    --token--primary: var(--todo--primary, #ffee00);
-    --token--secondary: var(--todo--secondary, black);
-    --token--contrast: var(--todo--contrast, #fff);
-    --token--secondary-light-1: var(
+    --primary: var(--todo--primary, #ffee00);
+    --secondary: var(--todo--secondary, black);
+    --contrast: var(--todo--contrast, #fff);
+    --secondary-light-1: var(
       --secondary-light-1,
       rgba(255, 255, 255, 0.2)
     );
-    --token--secondary-light-2: var(
+    --secondary-light-2: var(
       --secondary-light-2,
       rgba(255, 255, 255, 0.5)
     );
-    --token--box-radius: var(--todo--box-radius, 1rem);
-    --token--box-min-height: var(--todo--box-min-height, 3rem);
-    --token--box-gap: var(--todo--box-gap, 3rem);
+    --box-radius: var(--todo--box-radius, 1rem);
+    --box-min-height: var(--todo--box-min-height, 3rem);
+    --box-gap: var(--todo--box-gap, 3rem);
   }
-`;const d=({color:t,width:e})=>s`<svg height="2" width="${e}">
+`;
+const d = ({ color: t, width: e }) => s`<svg height="2" width="${e}">
   <line
     x1="0"
     y1="50%"
@@ -26,19 +67,41 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
     stroke-width="2"
     stroke-dasharray="0.1 5"
   />
-</svg>`;function c({value:t="",...e}){const[,a]=o("value");return r("reset",(()=>a(""))),n((()=>s`<input
+</svg>`;
+function c({ value: t = "", ...e }) {
+  const [, a] = o("value");
+  return (
+    r("reset", () => a("")),
+    n(
+      () => s`<input
         ...${e}
         slot="input"
         type="text"
         value=${t}
-        oninput=${t=>a(t.target.value)}
-      />`)),s`<host shadowDom>
+        oninput=${(t) => a(t.target.value)}
+      />`
+    ),
+    s`<host shadowDom>
     <div class="box">
       <slot name="input"></slot>
-      ${d({color:"var(--token--secondary-light-2)",width:"100%"})}
-      ${d({color:"var(--token--primary)",width:1+.7*t.replace(/s+/g,"").length+"em"})}
+      ${d({ color: "var(--secondary-light-2)", width: "100%" })}
+      ${d({
+        color: "var(--primary)",
+        width: 1 + 0.7 * t.replace(/s+/g, "").length + "em",
+      })}
     </div>
-  </host>`}c.props={value:String,name:String,required:Boolean,placeholder:String},c.styles=[i,t`
+  </host>`
+  );
+}
+(c.props = {
+  value: String,
+  name: String,
+  required: Boolean,
+  placeholder: String,
+}),
+  (c.styles = [
+    i,
+    t`
     .box {
       position: relative;
     }
@@ -61,35 +124,59 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
       font-family: unset;
       cursor: pointer;
     }
-  `];const l=e(c);function u(){return n((()=>s`<button slot="button">
+  `,
+  ]);
+const l = e(c);
+function u() {
+  return (
+    n(
+      () => s`<button slot="button">
       <svg width="12" height="12" viewBox="0 0 12 12">
         <path
           id="icon-plus"
           d="M5,11V7H1A1,1,0,0,1,1,5H5V1A1,1,0,0,1,7,1V5h4a1,1,0,0,1,0,2H7v4a1,1,0,0,1-2,0Z"
-          fill="var(--token--primary)"
+          fill="var(--primary)"
         />
       </svg>
-    </button>`)),s`<host shadowDom>
+    </button>`
+    ),
+    s`<host shadowDom>
     <slot name="button"></slot>
-  </host>`}u.styles=[i,t`
+  </host>`
+  );
+}
+u.styles = [
+  i,
+  t`
     :host {
-      --radius: var(--token--box-radius);
+      --radius: var(--box-radius);
     }
     ::slotted(button) {
-      --size: var(--token--box-min-height);
+      --size: var(--box-min-height);
       width: var(--size);
       height: var(--size);
-      background: var(--token--secondary-light-1);
+      background: var(--secondary-light-1);
       border: none;
       border-radius: var(--radius);
       cursor: pointer;
     }
-  `];const h=e(u);function p(t){const[,e]=o("checked");return n((()=>s`<input
+  `,
+];
+const h = e(u);
+function p(t) {
+  const [, e] = o("checked");
+  return (
+    n(
+      () => s`<input
         slot="input"
         type="checkbox"
-        onchange=${t=>{e(t.target.checked)}}
+        onchange=${(t) => {
+          e(t.target.checked);
+        }}
         ...${t}
-      />`)),s`<host shadowDom>
+      />`
+    ),
+    s`<host shadowDom>
     <slot name="input"></slot>
     <div class="icon">
       <slot name="checked">
@@ -101,7 +188,13 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
         </svg>
       </slot>
     </div>
-  </host>`}p.props={checked:{type:Boolean,reflect:!0}},p.styles=[i,t`
+  </host>`
+  );
+}
+(p.props = { checked: { type: Boolean, reflect: !0 } }),
+  (p.styles = [
+    i,
+    t`
     :host {
       position: relative;
       display: inline-flex;
@@ -110,14 +203,14 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
     ::slotted(input) {
       width: 1.2rem;
       height: 1.2rem;
-      border-radius: calc(var(--token--box-radius) * 0.33);
+      border-radius: calc(var(--box-radius) * 0.33);
       appearance: unset;
-      border: 2px solid var(--token--primary);
+      border: 2px solid var(--primary);
       margin: auto;
     }
 
     ::slotted(input:checked) {
-      background: var(--token--primary);
+      background: var(--primary);
     }
 
     .icon {
@@ -131,17 +224,26 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
     :host([checked]) .icon {
       opacity: 1;
     }
-  `];const m=e(p);function b(){return s`<host shadowDom>
+  `,
+  ]);
+const m = e(p);
+function b() {
+  return s`<host shadowDom>
     <button>
       <slot></slot>
     </button>
-  </host>`}b.props={selected:{type:Boolean,reflect:!0}},b.styles=[i,t`
+  </host>`;
+}
+(b.props = { selected: { type: Boolean, reflect: !0 } }),
+  (b.styles = [
+    i,
+    t`
     button {
       border: none;
       background: none;
       color: currentColor;
       font-family: unset;
-      height: calc(var(--token--box-min-height) * 0.75);
+      height: calc(var(--box-min-height) * 0.75);
       position: relative;
       padding: 0px 0.5rem;
       cursor: pointer;
@@ -156,31 +258,53 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
       background: transparent;
       content: "";
       display: block;
-      border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
+      border-radius: var(--box-radius) var(--box-radius) 0 0;
     }
 
     :host([selected]) button:before {
-      background: var(--token--primary);
+      background: var(--primary);
     }
-  `];const k=e(b);let g=Date.now();function v(){const t=a("NewTask",{bubbles:!0,composed:!0});return s`<host shadowDom>
+  `,
+  ]);
+const k = e(b);
+let g = Date.now();
+function v() {
+  const t = a("NewTask", { bubbles: !0, composed: !0 });
+  return s`<host shadowDom>
     <form
       class="header"
-      onsubmit=${e=>{e.preventDefault();const{target:o}=e,{input:{value:r}}=o;r.trim()&&(g++,t({id:g,value:r,checked:!1}),o.reset())}}
+      onsubmit=${(e) => {
+        e.preventDefault();
+        const { target: o } = e,
+          {
+            input: { value: r },
+          } = o;
+        r.trim() && (g++, t({ id: g, value: r, checked: !1 }), o.reset());
+      }}
     >
       <todo-input placeholder="Todo" required name="input"></todo-input>
       <todo-button
-        style=${{"--radius":"0 var(--token--box-radius) 0 var(--token--box-radius)"}}
+        style=${{ "--radius": "0 var(--box-radius) 0 var(--box-radius)" }}
       ></todo-button>
     </form>
-  </host>`}v.styles=[i,t`
+  </host>`;
+}
+v.styles = [
+  i,
+  t`
     .header {
       display: grid;
       grid-template-columns: 1fr auto;
-      grid-gap: var(--token--box-gap);
-      padding-left: var(--token--box-gap);
+      grid-gap: var(--box-gap);
+      padding-left: var(--box-gap);
       align-items: flex-end;
     }
-  `];const f=e(v);function y({checked:t}){const[,e]=o("checked");return s`<host shadowDom>
+  `,
+];
+const f = e(v);
+function y({ checked: t }) {
+  const [, e] = o("checked");
+  return s`<host shadowDom>
     <label>
       <!--
       In this case we must reflect the checked state 
@@ -189,13 +313,18 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
       -->
       <todo-checkbox
         checked="${t}"
-        onchange=${t=>e(t.target.checked)}
+        onchange=${(t) => e(t.target.checked)}
       />
       <span>
         <slot></slot>
       </span>
     </label>
-  </host>`}y.props={checked:{type:Boolean,reflect:!0}},y.styles=[i,t`
+  </host>`;
+}
+(y.props = { checked: { type: Boolean, reflect: !0 } }),
+  (y.styles = [
+    i,
+    t`
     label {
       display: grid;
       padding: 0.25rem 0.5rem;
@@ -206,64 +335,99 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
     }
 
     label:hover {
-      background-color: var(--token--secondary-light-1);
-      border-radius: calc(var(--token--box-radius) * 0.33);
+      background-color: var(--secondary-light-1);
+      border-radius: calc(var(--box-radius) * 0.33);
     }
-  `];const x=e(y);function w(){return s`<host shadowDom>
+  `,
+  ]);
+const x = e(y);
+function w() {
+  return s`<host shadowDom>
     <slot></slot>
-  </host>`}w.styles=[i,t`
+  </host>`;
+}
+w.styles = [
+  i,
+  t`
     :host {
       display: flex;
-      padding: 0 var(--token--box-gap);
+      padding: 0 var(--box-gap);
     }
 
     slot {
       display: flex;
       justify-content: space-around;
       align-items: flex-end;
-      background: var(--token--secondary-light-1);
+      background: var(--secondary-light-1);
 
-      border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
+      border-radius: var(--box-radius) var(--box-radius) 0 0;
       width: 100%;
     }
-  `];const $=e(w);function D(){const[t,e]=o("task"),[r,n]=o("view");return s`<host shadowDom>
+  `,
+];
+const $ = e(w);
+function D() {
+  const [t, e] = o("task"),
+    [r, n] = o("view");
+  return s`<host shadowDom>
     <todo-header
-      onNewTask=${t=>{e((e=>[...e,t.detail]))}}
+      onNewTask=${(t) => {
+        e((e) => [...e, t.detail]);
+      }}
     ></todo-header>
     <div class="tasks">
       <div class="list">
-        ${t.filter((t=>"complete"==r?t.checked:"active"!=r||!t.checked)).map((({value:t,checked:o,id:r})=>s`<todo-task
+        ${t
+          .filter((t) =>
+            "complete" == r ? t.checked : "active" != r || !t.checked
+          )
+          .map(
+            ({ value: t, checked: o, id: r }) => s`<todo-task
               checked=${o}
-              onchange=${t=>{const{target:o}=t;e((t=>t.map((t=>r===t.id?{...t,checked:o.checked}:t))))}}
+              onchange=${(t) => {
+                const { target: o } = t;
+                e((t) =>
+                  t.map((t) => (r === t.id ? { ...t, checked: o.checked } : t))
+                );
+              }}
             >
               ${t}
-            </todo-task>`))}
+            </todo-task>`
+          )}
       </div>
     </div>
     <todo-footer class="footer">
-      <todo-tab selected=${"all"===r} onclick=${()=>n("all")}>
+      <todo-tab selected=${"all" === r} onclick=${() => n("all")}>
         All
       </todo-tab>
       <todo-tab
-        selected=${"active"===r}
-        onclick=${()=>n("active")}
+        selected=${"active" === r}
+        onclick=${() => n("active")}
       >
         Active
       </todo-tab>
       <todo-tab
-        selected=${"complete"===r}
-        onclick=${()=>n("complete")}
+        selected=${"complete" === r}
+        onclick=${() => n("complete")}
       >
         Complete
       </todo-tab>
     </todo-footer>
-  </host>`}D.props={view:{type:String,value:"all"},task:{type:Array,value:()=>[]}},D.styles=[i,t`
+  </host>`;
+}
+(D.props = {
+  view: { type: String, value: "all" },
+  task: { type: Array, value: () => [] },
+}),
+  (D.styles = [
+    i,
+    t`
     :host {
       display: flex;
       flex-flow: column nowrap;
-      color: var(--token--contrast);
-      border-radius: var(--token--box-radius);
-      background: var(--token--secondary);
+      color: var(--contrast);
+      border-radius: var(--box-radius);
+      background: var(--secondary);
       min-height: 280px;
     }
 
@@ -274,4 +438,14 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
     .footer {
       margin: auto 0px 0px;
     }
-  `];const E=e(D);customElements.define("todo-input",l),customElements.define("todo-button",h),customElements.define("todo-checkbox",m),customElements.define("todo-tab",k),customElements.define("todo-header",f),customElements.define("todo-task",x),customElements.define("todo-footer",$),customElements.define("todo-app",E);
+  `,
+  ]);
+const E = e(D);
+customElements.define("todo-input", l),
+  customElements.define("todo-button", h),
+  customElements.define("todo-checkbox", m),
+  customElements.define("todo-tab", k),
+  customElements.define("todo-header", f),
+  customElements.define("todo-task", x),
+  customElements.define("todo-footer", $),
+  customElements.define("todo-app", E);

@@ -32,7 +32,7 @@ function todoHeader() {
       <todo-input placeholder="Todo" required name="input"></todo-input>
       <todo-button
         style=${{
-          "--radius": `0 var(--token--box-radius) 0 var(--token--box-radius)`,
+          "--radius": `0 var(--box-radius) 0 var(--box-radius)`,
         }}
       ></todo-button>
     </form>
@@ -45,8 +45,8 @@ todoHeader.styles = [
     .header {
       display: grid;
       grid-template-columns: 1fr auto;
-      grid-gap: var(--token--box-gap);
-      padding-left: var(--token--box-gap);
+      grid-gap: var(--box-gap);
+      padding-left: var(--box-gap);
       align-items: flex-end;
     }
   `,

@@ -44,8 +44,8 @@ todoTask.styles = [
     }
 
     label:hover {
-      background-color: var(--token--secondary-light-1);
-      border-radius: calc(var(--token--box-radius) * 0.33);
+      background-color: var(--secondary-light-1);
+      border-radius: calc(var(--box-radius) * 0.33);
     }
   `,
 ];
