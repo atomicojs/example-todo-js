@@ -11,7 +11,7 @@ function todoTask({ checked }) {
       <!--
       In this case we must reflect the checked state 
       to the component that nests it, in order to 
-      synchronize the state of both the parent and the child
+      synchronize the state of both the parent and the child.
       -->
       <todo-checkbox
         checked="${checked}"
