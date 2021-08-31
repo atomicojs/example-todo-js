@@ -33,8 +33,6 @@ function todo() {
           )
           .map(
             ({ value, checked, id }) => html`<todo-task
-              key=${id}
-              data-key=${id}
               checked=${checked}
               onchange=${
                 /**

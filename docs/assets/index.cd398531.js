@@ -1,4 +1,4 @@
-import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.js";!function(){const t=document.createElement("link").relList;if(!(t&&t.supports&&t.supports("modulepreload"))){for(const t of document.querySelectorAll('link[rel="modulepreload"]'))e(t);new MutationObserver((t=>{for(const o of t)if("childList"===o.type)for(const t of o.addedNodes)"LINK"===t.tagName&&"modulepreload"===t.rel&&e(t)})).observe(document,{childList:!0,subtree:!0})}function e(t){if(t.ep)return;t.ep=!0;const e=function(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),"use-credentials"===t.crossorigin?e.credentials="include":"anonymous"===t.crossorigin?e.credentials="omit":e.credentials="same-origin",e}(t);fetch(t.href,e)}}();var i=t`
+import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.js";!function(){const t=document.createElement("link").relList;if(!(t&&t.supports&&t.supports("modulepreload"))){for(const t of document.querySelectorAll('link[rel="modulepreload"]'))e(t);new MutationObserver((t=>{for(const o of t)if("childList"===o.type)for(const t of o.addedNodes)"LINK"===t.tagName&&"modulepreload"===t.rel&&e(t)})).observe(document,{childList:!0,subtree:!0})}function e(t){if(t.ep)return;t.ep=!0;const e=function(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),"use-credentials"===t.crossorigin?e.credentials="include":"anonymous"===t.crossorigin?e.credentials="omit":e.credentials="same-origin",e}(t);fetch(t.href,e)}}();var i=t`
   :host {
     --token--primary: var(--todo--primary, #ffee00);
     --token--secondary: var(--todo--secondary, black);
@@ -15,7 +15,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     --token--box-min-height: var(--todo--box-min-height, 3rem);
     --token--box-gap: var(--todo--box-gap, 3rem);
   }
-`;const d=({color:t,width:e})=>a`<svg height="2" width="${e}">
+`;const d=({color:t,width:e})=>s`<svg height="2" width="${e}">
   <line
     x1="0"
     y1="50%"
@@ -26,13 +26,13 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     stroke-width="2"
     stroke-dasharray="0.1 5"
   />
-</svg>`;function c({value:t="",...e}){const[,s]=o("value");return r("reset",(()=>s(""))),n((()=>a`<input
+</svg>`;function c({value:t="",...e}){const[,a]=o("value");return r("reset",(()=>a(""))),n((()=>s`<input
         ...${e}
         slot="input"
         type="text"
         value=${t}
-        oninput=${t=>s(t.target.value)}
-      />`)),a`<host shadowDom>
+        oninput=${t=>a(t.target.value)}
+      />`)),s`<host shadowDom>
     <div class="box">
       <slot name="input"></slot>
       ${d({color:"var(--token--secondary-light-2)",width:"100%"})}
@@ -61,7 +61,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       font-family: unset;
       cursor: pointer;
     }
-  `];const l=e(c);function u(){return n((()=>a`<button slot="button">
+  `];const l=e(c);function u(){return n((()=>s`<button slot="button">
       <svg width="12" height="12" viewBox="0 0 12 12">
         <path
           id="icon-plus"
@@ -69,7 +69,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
           fill="var(--token--primary)"
         />
       </svg>
-    </button>`)),a`<host shadowDom>
+    </button>`)),s`<host shadowDom>
     <slot name="button"></slot>
   </host>`}u.styles=[i,t`
     :host {
@@ -84,12 +84,12 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       border-radius: var(--radius);
       cursor: pointer;
     }
-  `];const h=e(u);function p(t){const[,e]=o("checked");return n((()=>a`<input
+  `];const h=e(u);function p(t){const[,e]=o("checked");return n((()=>s`<input
         slot="input"
         type="checkbox"
         onchange=${t=>{e(t.target.checked)}}
         ...${t}
-      />`)),a`<host shadowDom>
+      />`)),s`<host shadowDom>
     <slot name="input"></slot>
     <div class="icon">
       <slot name="checked">
@@ -131,7 +131,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     :host([checked]) .icon {
       opacity: 1;
     }
-  `];const m=e(p);function b(){return a`<host shadowDom>
+  `];const m=e(p);function b(){return s`<host shadowDom>
     <button>
       <slot></slot>
     </button>
@@ -162,7 +162,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
     :host([selected]) button:before {
       background: var(--token--primary);
     }
-  `];const k=e(b);let g=Date.now();function v(){const t=s("NewTask",{bubbles:!0,composed:!0});return a`<host shadowDom>
+  `];const k=e(b);let g=Date.now();function v(){const t=a("NewTask",{bubbles:!0,composed:!0});return s`<host shadowDom>
     <form
       class="header"
       onsubmit=${e=>{e.preventDefault();const{target:o}=e,{input:{value:r}}=o;r.trim()&&(g++,t({id:g,value:r,checked:!1}),o.reset())}}
@@ -180,7 +180,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       padding-left: var(--token--box-gap);
       align-items: flex-end;
     }
-  `];const f=e(v);function y({checked:t}){const[,e]=o("checked");return a`<host shadowDom>
+  `];const f=e(v);function y({checked:t}){const[,e]=o("checked");return s`<host shadowDom>
     <label>
       <!--
       In this case we must reflect the checked state 
@@ -209,7 +209,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       background-color: var(--token--secondary-light-1);
       border-radius: calc(var(--token--box-radius) * 0.33);
     }
-  `];const x=e(y);function w(){return a`<host shadowDom>
+  `];const x=e(y);function w(){return s`<host shadowDom>
     <slot></slot>
   </host>`}w.styles=[i,t`
     :host {
@@ -226,15 +226,13 @@ import{c as t,a as e,u as o,b as r,d as n,h as a,e as s}from"./vendor.6860be20.j
       border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
       width: 100%;
     }
-  `];const $=e(w);function D(){const[t,e]=o("task"),[r,n]=o("view");return a`<host shadowDom>
+  `];const $=e(w);function D(){const[t,e]=o("task"),[r,n]=o("view");return s`<host shadowDom>
     <todo-header
       onNewTask=${t=>{e((e=>[...e,t.detail]))}}
     ></todo-header>
     <div class="tasks">
       <div class="list">
-        ${t.filter((t=>"complete"==r?t.checked:"active"!=r||!t.checked)).map((({value:t,checked:o,id:r})=>a`<todo-task
-              key=${r}
-              data-key=${r}
+        ${t.filter((t=>"complete"==r?t.checked:"active"!=r||!t.checked)).map((({value:t,checked:o,id:r})=>s`<todo-task
               checked=${o}
               onchange=${t=>{const{target:o}=t;e((t=>t.map((t=>r===t.id?{...t,checked:o.checked}:t))))}}
             >
