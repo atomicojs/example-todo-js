@@ -92,9 +92,9 @@ todo.styles = [
     :host {
       display: flex;
       flex-flow: column nowrap;
-      color: var(--contrast);
-      border-radius: var(--box-radius);
-      background: var(--secondary);
+      color: var(--token--contrast);
+      border-radius: var(--token--box-radius);
+      background: var(--token--secondary);
       min-height: 280px;
     }
 

@@ -24,7 +24,7 @@ tab.styles = [
       background: none;
       color: currentColor;
       font-family: unset;
-      height: calc(var(--box-min-height) * 0.75);
+      height: calc(var(--token--box-min-height) * 0.75);
       position: relative;
       padding: 0px 0.5rem;
       cursor: pointer;
@@ -39,11 +39,11 @@ tab.styles = [
       background: transparent;
       content: "";
       display: block;
-      border-radius: var(--box-radius) var(--box-radius) 0 0;
+      border-radius: var(--token--box-radius) var(--token--box-radius) 0 0;
     }
 
     :host([selected]) button:before {
-      background: var(--primary);
+      background: var(--token--primary);
     }
   `,
 ];

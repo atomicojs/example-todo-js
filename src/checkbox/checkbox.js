@@ -62,14 +62,14 @@ checkbox.styles = [
     ::slotted(input) {
       width: 1.2rem;
       height: 1.2rem;
-      border-radius: calc(var(--box-radius) * 0.33);
+      border-radius: calc(var(--token--box-radius) * 0.33);
       appearance: unset;
-      border: 2px solid var(--primary);
+      border: 2px solid var(--token--primary);
       margin: auto;
     }
 
     ::slotted(input:checked) {
-      background: var(--primary);
+      background: var(--token--primary);
     }
 
     .icon {
