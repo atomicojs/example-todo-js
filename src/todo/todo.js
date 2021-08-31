@@ -10,7 +10,6 @@ function todo() {
    * @type {import("atomico").UseProp<View>}
    */
   const [view, setView] = useProp("view");
-
   return html`<host shadowDom>
     <todo-header
       onNewTask=${
@@ -34,6 +33,8 @@ function todo() {
           )
           .map(
             ({ value, checked, id }) => html`<todo-task
+              key=${id}
+              data-key=${id}
               checked=${checked}
               onchange=${
                 /**

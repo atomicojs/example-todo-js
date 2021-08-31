@@ -13,7 +13,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "vite",
+    "start": "vite --force",
     "build": "vite build --outDir docs --base /example-todo-js",
     "test": "wtr src/**/*.test.js --node-resolve",
     "exports": "exports src/components.js --exports --types --main components",

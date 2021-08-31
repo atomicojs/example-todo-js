@@ -1,13 +1,22 @@
-import { c, html, css } from "atomico";
+import { c, html, css, useProp } from "atomico";
 import tokens from "../tokens";
 
 /**
  * @param {import("atomico").Props<typeof todoTask.props>} props
  */
 function todoTask({ checked }) {
+  const [, setChecked] = useProp("checked");
   return html`<host shadowDom>
     <label>
-      <todo-checkbox checked="${checked}" />
+      <!--
+      In this case we must reflect the checked state 
+      to the component that nests it, in order to 
+      synchronize the state of both the parent and the child
+      -->
+      <todo-checkbox
+        checked="${checked}"
+        onchange=${(event) => setChecked(event.target.checked)}
+      />
       <span>
         <slot></slot>
       </span>
