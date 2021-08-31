@@ -185,7 +185,7 @@ import{c as t,a as e,u as o,b as r,d as n,h as s,e as a}from"./vendor.6860be20.j
       <!--
       In this case we must reflect the checked state 
       to the component that nests it, in order to 
-      synchronize the state of both the parent and the child
+      synchronize the state of both the parent and the child.
       -->
       <todo-checkbox
         checked="${t}"
