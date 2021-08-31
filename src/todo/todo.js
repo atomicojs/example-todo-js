@@ -83,6 +83,11 @@ todo.props = {
   task: {
     type: Array,
     value: () => [],
+    /**
+     * We reflect the state as an attribute to visualize the change,
+     * this is not strict, it is only to know it through the examples
+     */
+    reflect: true,
   },
 };
 
